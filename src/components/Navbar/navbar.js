@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../SideBarData/sidebarData.js";
+import "./navbar.css";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
