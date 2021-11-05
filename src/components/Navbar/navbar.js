@@ -23,15 +23,15 @@ const Navbar = () => {
               <AiOutlineClose />
             </Link>
           </li>
-          {SidebarData.map((item, index)=>{
-            return(
-              <li key={item} className={item.cName}>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
                 <Link to={item.path}>
                   {item.icon}
                   <span>{item.title}</span>
                 </Link>
               </li>
-            )
+            );
           })}
         </ul>
       </nav>
