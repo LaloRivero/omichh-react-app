@@ -5,18 +5,13 @@
   justify-content: start;
   align-items: center;
 }
-.navbar__menu {
+.navbar__menu-bars {
   margin-left: 1.2rem;
   font-size: 1.2rem;
   background-color: none;
 }
 
-.navbar__menu.active {
-  left: 0;
-  transition: 350ms;
-}
-
-.navbar__menu-items {
+.navbar__menu {
   background-color: #0091bf;
   width: 250px;
   height: 100vh;
@@ -25,8 +20,13 @@
   justify-content: start;
   position: fixed;
   top: 0;
-  /*left: -100%;*/
+  left: -100%;
   transition: 850ms;
+}
+
+.navbar__menu.active {
+  left: 0;
+  transition: 350ms;
 }
 
 .navbar__text {
@@ -53,4 +53,21 @@
 .navbar__text a:hover {
   background-color: #ffffff;
   color: #0091bf;
+}
+
+.navbar__menu-items {
+  width: 100%;
+}
+
+.navbar__toggle {
+  background-color: #0091bf;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
 }

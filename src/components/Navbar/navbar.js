@@ -13,12 +13,12 @@ const Navbar = () => {
   return (
     <React.Fragment>
       <div className="navbar">
-        <Link to="#" className="navbar__menu">
+        <Link to="#" className="navbar__menu-bars">
           <FaBars onClick={showSidebar} />
         </Link>
       </div>
       <nav className={sidebar ? "navbar__menu active" : "navbar__menu"}>
-        <ul className="navbar__menu-items">
+        <ul className="navbar__menu-items" onClick={showSidebar}>
           <li className="navbar__toggle">
             <Link className="menu__bars" to="#">
               <AiOutlineClose />
