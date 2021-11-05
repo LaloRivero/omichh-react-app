@@ -27,3 +27,5 @@ img/
 *.jpg
 *.jpeg
 *.png
+*.svg
+assets/
