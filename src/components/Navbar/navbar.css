@@ -5,8 +5,9 @@
   justify-content: end;
   align-items: center;
 }
-.menu-bars{
-  margin-left: 2rem;
-  font-size: 2rem;
+.navbar__menu{
+  margin-left: 1.2rem;
+  font-size: 1.2rem;
   background-color: none;
 }
+
