@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import { SidebarData } from "../SideBarData/sideBarData";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
     <React.Fragment>
       <div className="navbar">
         <Link to="#" className="navbar__menu">
-          <FaBars onClick={showSidebar}/>
+          <FaBars onClick={showSidebar} />
         </Link>
       </div>
       <nav className={sidebar ? "navbar__menu active" : "navnar__menu"}>
@@ -22,6 +23,7 @@ const Navbar = () => {
               <AiOutlineClose />
             </Link>
           </li>
+          {SidebarData}
         </ul>
       </nav>
     </React.Fragment>
