@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegIdBadge } from "react-icons/fa";
-import { FcAbout } from "react-icons/fc";
+import { FaInfoCircle } from "react-icons/fa";
 import { RiPencilRulerLine } from "react-icons/ri";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { VscNotebook } from "react-icons/vsc";
@@ -34,7 +34,7 @@ export const SidebarData = [
   {
     title: "OMICHH",
     path: "/",
-    icon: <FcAbout />,
+    icon: <FaInfoCircle />,
     cName: "navbar__text",
   },
   {
