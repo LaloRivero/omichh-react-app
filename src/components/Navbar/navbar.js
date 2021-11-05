@@ -17,7 +17,7 @@ const Navbar = () => {
           <FaBars onClick={showSidebar} />
         </Link>
       </div>
-      <nav className={sidebar ? "navbar__menu active" : "navnar__menu"}>
+      <nav className={sidebar ? "navbar__menu active" : "navbar__menu"}>
         <ul className="navbar__menu-items">
           <li className="navbar__toggle">
             <Link className="menu__bars" to="#">
