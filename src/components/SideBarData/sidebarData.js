@@ -2,7 +2,7 @@ import React from "react";
 import { FaRegIdBadge } from "react-icons/fa";
 import { FcAbout } from "react-icons/fc";
 import { RiPencilRulerLine } from "react-icons/ri";
-import { HiOutlineDocumer } from "react-icons/hi";
+import { HiOutlineDocumentText } from "react-icons/hi";
 import { VscNotebook } from "react-icons/vsc";
 import { MdPermContactCalendar } from "react-icons/md";
 
@@ -16,7 +16,7 @@ export const SidebarData = [
   {
     title: "Convocatoria",
     path: "/",
-    icon: <HiOutlineDocumer />,
+    icon: <HiOutlineDocumentText />,
     cName: "nav-text",
   },
   {
