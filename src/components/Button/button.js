@@ -5,7 +5,7 @@ import "./button.css";
 const Button = (props) => {
   return (
   <React.Fragment>
-    <Link className="button">{props.layout}</Link>
+    <Link className="button" to="/">{props.layout}</Link>
   </React.Fragment>
   );
 };

@@ -1,0 +1,21 @@
+@import "../../res/colors.css";
+
+.button{
+  width: 180px;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--blue);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.65);
+}
+
+.button:hover{
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--white);
+  box-shadow: none;
+}
