@@ -1,11 +1,27 @@
+.color-dark {
+  color: #ffffff;
+}
+
+.color-light {
+  color: #0091bf;
+}
+
 .navbar {
-  background-color: #0091bf;
   height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
+.navbar-dark {
+  background-color: #0091bf;
+}
+
+.navbar-light {
+  background-color: #ffffff;
+}
+
 .navbar__menu-bars {
   display: flex;
   justify-content: center;
@@ -13,7 +29,6 @@
   margin-right: 1.2rem;
   font-size: 1.2rem;
   background-color: none;
-  color: #ffffff;
 }
 
 .navbar__menu-bars:hover {
@@ -23,10 +38,6 @@
 .navbar__logo img {
   width: 40px;
   margin-left: 1.2rem;
-}
-
-.menu__bars-close {
-  color: #ffffff;
 }
 
 .menu__bars-close:hover {
