@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import medals from "../../assets/medallas.png";
 import Button from "../../components/Button/button";
+import Footer from "../../components/Footer/footer";
+import medals from "../../assets/medallas.png";
 import "./landing.css";
 
 class Landing extends React.Component {
@@ -28,6 +29,7 @@ class Landing extends React.Component {
               <img src={medals} alt="Medals" className="medals__img" />
             </div>
           </div>
+          <Footer/>
         </div>
       </React.Fragment>
     );
