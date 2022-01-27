@@ -1,0 +1,34 @@
+@import "../../res/colors.css";
+@import "../../res/fonts.css";
+
+.landing{
+  height: 100vh;
+  background-color: var(--blue);
+}
+.landing__container{
+  width: 100%;
+  padding: 10% 20%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.landing__content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+}
+.content__title{
+  font-family: 'Fira Code', monospace !important;
+  color: var(--white);
+}
+.content__text{
+  margin: 30px 0px;
+  color: var(--white);
+}
+.medals__img{
+  width: 100%;
+  margin-left: 40px;
+}
