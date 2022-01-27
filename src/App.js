@@ -1,13 +1,13 @@
 import './App.css';
-import Navbar from './components/Navbar/navbar';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Landing from './pages/Landing/landing';
 
 function App() {
   return (
     <Router>
-      <Navbar/>
       <Switch>
-        <Route path='/'/>
+        <Route path='/' component={Landing}/>
       </Switch>
     </Router>
   );
