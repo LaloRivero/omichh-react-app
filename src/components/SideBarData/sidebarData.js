@@ -33,7 +33,7 @@ export const SidebarData = [
   },
   {
     title: "OMICHH",
-    path: "/",
+    path: "/about",
     icon: <FaInfoCircle />,
     cName: "navbar__text",
   },
