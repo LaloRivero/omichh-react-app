@@ -16,7 +16,7 @@ const Navbar = (props) => {
     <React.Fragment>
       <div className={props.theme === "light" ? "navbar navbar-light" : "navbar navbar-dark"}
       >
-        <Link to="#" className="navbar__logo">
+        <Link to="/" className="navbar__logo">
           <img
             src={props.theme === "light" ? logoblue : logowhite}
             alt="logo"
