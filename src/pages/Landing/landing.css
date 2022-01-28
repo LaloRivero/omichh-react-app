@@ -7,6 +7,8 @@
 }
 .landing__container{
   width: 100%;
+  height: 90%;
+  background-color: var(--blue);
   padding: 10% 20%;
   display: flex;
   flex-direction: row;

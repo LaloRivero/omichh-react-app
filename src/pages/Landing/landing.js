@@ -29,7 +29,7 @@ class Landing extends React.Component {
               <img src={medals} alt="Medals" className="medals__img" />
             </div>
           </div>
-          <Footer/>
+          <Footer theme="dark"/>
         </div>
       </React.Fragment>
     );
