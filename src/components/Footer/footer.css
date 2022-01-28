@@ -1,39 +1,43 @@
 @import "../../res/colors.css";
 
-.color-dark{
-  color:var(--white);
+.color-dark {
+  color: var(--white);
 }
-.color-light{
-  color:var(--blue);
+.color-light {
+  color: var(--blue);
 }
-.Footer{
+.b-color-light {
+  background-color: var(--white);
+}
+.b-color-dark {
+  background-color: var(--blue);
+}
+.Footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: var(--blue);
 }
-.docs-links{
+.docs-links {
   display: flex;
   flex-direction: row;
 }
-.Footer__contact-list{
+.Footer__contact-list {
   display: flex;
   flex-direction: row;
 }
-.list__element{
+.list__element {
   margin: 0;
   padding: 0;
 }
-.element__link{
+.element__link {
   margin: 0;
   padding: 0;
-  color: var(--white);
   text-decoration: none;
 }
-.element__link:hover{
-  color:var(--gray)
+.element__link:hover {
+  color: var(--gray);
 }
-.Facebook__icon{
+.Facebook__icon {
   width: 24px;
   margin: 0 15px;
 }
