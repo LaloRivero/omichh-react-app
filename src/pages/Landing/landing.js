@@ -5,9 +5,8 @@ import Footer from "../../components/Footer/footer";
 import medals from "../../assets/medallas.png";
 import "./landing.css";
 
-class Landing extends React.Component {
-  render() {
-    return (
+const Landing = () =>{
+  return (
       <React.Fragment>
         <div className="landing">
           <Navbar theme="dark" />
@@ -33,7 +32,6 @@ class Landing extends React.Component {
         </div>
       </React.Fragment>
     );
-  }
 }
 
 export default Landing;
