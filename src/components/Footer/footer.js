@@ -1,55 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import facebook from '../../assets/facebook.svg'
 import './footer.css'
 
-const Footer = () =>{
+const Footer = (props) =>{
   return(
     <React.Fragment>
       <div className="Footer">
         <div className="Footer__docs-links">
           <li className="docs-links">
-            <ol className="docs-links__element">
-              <a href="/">
-                <p className="elemt__text">CONVOCATORIA</p>
-              </a>
-            </ol>
-            <ol classNam="docs-links__element">
-              <a href="/">
-                <p className="elemt__text">REGLAMENTO</p>
-              </a>
-            </ol>
-            <ol className="docs-links__element">
-              <a href="/">
-                <p className="elemt__text">CODIGO DE CONDUCTA</p>
-              </a>
-            </ol>
-            <ol className="docs-links__element">
-                <a href="/">
-                  <p className="elemt__text">AVISO DE PRIVACIDAD</p>
-                </a>
+            <ol className="links__element">
+                <Link className="element__link" to="/">AVISO DE PRIVACIDAD</Link>
             </ol>
           </li>
         </div>
         <div className="Footer__contact">
           <li className="Footer__contact-list">
-            <ol className="List__element">
-              <a href="/">
-                <p className="elemt__text">contacto@omichh.org</p>
-              </a>
+            <ol className="list__element">
+              <Link className="element__link" to="/">contacto@omichh.org</Link>
             </ol>
-            <ol className="List__element">
-              <a href="/">
-                <img src="" alt="twitter" />
-              </a>
-            </ol>
-            <ol className="List__element">
-              <a href="/">
-                <img src="" alt="github" />
-              </a>
-            </ol>
-            <ol className="List__element">
-              <a href="/">
-                <img src="" alt="facebook" />
-              </a>
+            <ol className="list__element">
+              <a href="https://www.facebook.com/OMI.Chihuahua" rel="noopener noreferrer" target="_blank"><img className="Facebook__icon" src={facebook} alt="facebook" /></a>
             </ol>
           </li>
         </div>
