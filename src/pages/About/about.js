@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
-import Programing_img from "../../assets/Programming.png"
+import binary from "../../assets/binary.png";
 import "./about.css";
 
 const About = () => {
@@ -31,7 +31,7 @@ const About = () => {
             </p>
           </div>
           <div className="about__content-img">
-            <img src={Programing_img} alt="coding" />
+            <img src={binary} alt="coding" />
           </div>
         </div>
         <Footer theme="dark" />
