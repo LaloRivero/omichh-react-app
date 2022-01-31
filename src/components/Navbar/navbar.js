@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../SideBarData/sidebarData.js";
-import logowhite from "../../assets/logowhite.svg";
-import logoblue from "../../assets/logoblue.svg";
+import logo_white from "../../assets/logo_white.svg";
+import logo_blue from "../../assets/logo_blue.svg";
 import "./navbar.css";
 
 const Navbar = (props) => {
@@ -18,7 +18,7 @@ const Navbar = (props) => {
       >
         <Link to="/" className="navbar__logo">
           <img
-            src={props.theme === "light" ? logoblue : logowhite}
+            src={props.theme === "light" ? logo_blue : logo_white}
             alt="logo"
           />
         </Link>
