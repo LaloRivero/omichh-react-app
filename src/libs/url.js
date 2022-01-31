@@ -1,4 +1,4 @@
 let URL = {
-  omichh_api: "http:127.0.0.1:8000",
+  omichh_api: "http://127.0.0.1:8000",
 };
 export default URL;
