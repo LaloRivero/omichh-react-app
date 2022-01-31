@@ -1,6 +1,6 @@
 import React from "react";
 import RegisterForm from "../../components/RegisterForm/registerForm";
-import Header from "../../components/Header/header";
+import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import "./register.css";
 
@@ -9,10 +9,10 @@ class Register extends React.Component {
     return (
       <React.Fragment>
         <div className="register">
-          <Header theme="dark"></Header>
+          <Navbar theme="dark"/>
           <h1>Register</h1>
           <RegisterForm />
-          <Footer theme="dark"></Footer>
+          <Footer theme="dark"/>
         </div>
       </React.Fragment>
     );
