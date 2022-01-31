@@ -10,7 +10,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 export const SidebarData = [
   {
     title: "Registro",
-    path: "/",
+    path: "/register",
     icon: <FaRegIdBadge />,
     cName: "navbar__text",
   },

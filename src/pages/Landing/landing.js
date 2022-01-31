@@ -22,7 +22,7 @@ const Landing = () =>{
                 </strong>{" "}
                 utilizando la lógica, el ingenio y las computadoras.
               </p>
-              <Button layout="Participa" theme="dark" />
+              <Button to="/register" layout="Participa" theme="dark" />
             </div>
             <div className="landing__medals">
               <img src={medals} alt="Medals" className="medals__img" />

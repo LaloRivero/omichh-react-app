@@ -1,7 +1,7 @@
 import React from "react";
 import "./registerForm.css";
 
-class RegisterForm extends React.Fragment {
+class RegisterForm extends React.Component {
   render() {
     return (
       <React.Fragment>
