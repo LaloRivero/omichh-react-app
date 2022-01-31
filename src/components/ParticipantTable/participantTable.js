@@ -24,6 +24,16 @@ const ParticipantTable = (props) => {
       selector: (row) => row.school.name,
       sortable: true,
     },
+    {
+      name: "Verificado",
+      selector : (row) => {
+        if(row.is_verified){
+          return "✔"
+        }else{
+          return "❌"
+        }},
+      sortable:true,
+    }
   ];
   return (
     <React.Fragment>
