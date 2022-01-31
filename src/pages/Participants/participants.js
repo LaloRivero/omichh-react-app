@@ -18,11 +18,13 @@ class Participants extends React.Component {
 
   getParticipants = async () => {
     let response = await Http.instance.get_participants();
-    const data = response.results
-    console.log(data)
-    this.setState({ omi: data.filter((participant)=>participant.category==='OMI'),
-                    omis: data.filter((participant)=>participant.category==='OMIS'),
-                    omip: data.filter((participant)=>participant.category==='OMIP'),});
+    const data = response.results;
+    console.log(data);
+    this.setState({
+      omi: data.filter((participant) => participant.category === "OMI"),
+      omis: data.filter((participant) => participant.category === "OMIS"),
+      omip: data.filter((participant) => participant.category === "OMIP"),
+    });
   };
 
   render() {
@@ -32,13 +34,22 @@ class Participants extends React.Component {
           <Navbar theme={this.state.theme} />
           <div className="participants__hero">
             <img className="hero__img" src={team} alt="team" />
-            <div className="hero__search">
-              <input type="text" placeholder="Buscar participante" />
+            <div className="hero__text">
+              <h3>
+                A continuación podrás consultar la lista de los alumnos
+                inscritos en la Olimpiada Mexicana de informática en Chihuahua.
+              </h3>
             </div>
           </div>
-          {this.state.omi ?<ParticipantTable data={this.state.omi} category={"OMI"}/>: null}
-          {this.state.omis ?<ParticipantTable data={this.state.omis} category={"OMIS"}/>: null}
-          {this.state.omip ?<ParticipantTable data={this.state.omip} category={"OMIP"}/>: null}
+          {this.state.omi ? (
+            <ParticipantTable data={this.state.omi} category={"OMI"} />
+          ) : null}
+          {this.state.omis ? (
+            <ParticipantTable data={this.state.omis} category={"OMIS"} />
+          ) : null}
+          {this.state.omip ? (
+            <ParticipantTable data={this.state.omip} category={"OMIP"} />
+          ) : null}
           <Footer theme={this.state.theme} />
         </div>
       </React.Fragment>

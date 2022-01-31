@@ -12,7 +12,7 @@
 }
 .hero__img{
   margin: 0 10% 0 30%;
-  width: 50%;
+  width: 60%;
 }
 .hero__search{
   display: flex;
@@ -26,4 +26,8 @@
   border: 2px solid #0091bf;
   width: 90%;
   outline: none;
+}
+.hero__text{
+  color: #0091bf;
+  text-align: center;
 }
