@@ -1,0 +1,29 @@
+.participants{
+  width: 100vw;
+  height: 100vh;
+}
+.participants__hero{
+  margin:0 20% 0 0;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero__img{
+  margin: 0 10% 0 30%;
+  width: 50%;
+}
+.hero__search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+.hero__search input{
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 2px solid #0091bf;
+  width: 90%;
+  outline: none;
+}
