@@ -1,5 +1,11 @@
 @import "../../res/colors.css";
-
+.Footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+}
 .color-dark {
   color: var(--white);
 }
@@ -32,7 +38,6 @@
 .element__link {
   margin: 0;
   padding: 0;
-
   text-decoration: none;
 }
 .element__link:hover {

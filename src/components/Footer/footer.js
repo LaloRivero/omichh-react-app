@@ -16,7 +16,7 @@ const Footer = (props) => {
       >
         <div className="Footer__docs-links">
           <li className="docs-links">
-            <ol className="links__element">
+            <ol className="list__element">
               <Link
                 className={
                   props.theme === "light"
