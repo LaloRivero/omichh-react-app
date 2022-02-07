@@ -43,14 +43,14 @@ class RegisterForm extends React.Component {
               <option value='OMIP'>OMIP</option>
             </select>
             <br/><label>Escuela</label><br/>
-            <select className='form__select'>
+            <select className='form__select form__school'>
               <option value=''>Seleccione una opción</option>
               {this.state.schools.map((school)=>{
                 return <option key={school.id} value={school.name}>{school.name}</option>
               })}
             </select><br/>
-            <a href="/register"> <small>Registra una nueva escuela</small></a>
-            <br/><label>Año escolar</label><br/>
+            <a className="form__new_school" href="/register" > <small>Registra una nueva escuela</small></a>
+            <br/><label className='form__afterSchool'>Año escolar</label><br/>
             <select className='form__select'>
               <option value='1'>1</option>
               <option value='2'>2</option>
@@ -67,7 +67,9 @@ class RegisterForm extends React.Component {
             <input className='form__input' type='text' name='last_name'></input>
             <br/><label>Correo electrónico del Padre o Tutor</label><br/>
             <input className='form__input' type='text' name='last_name'></input><br/>
-            <button type='submit'>Registrar</button>
+            <div className="form__submit__container">
+              <button className='form__submit' type='submit'>Registrar</button>
+            </div>
           </form>
         </div>
       </React.Fragment>
