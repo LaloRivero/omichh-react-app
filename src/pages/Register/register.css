@@ -1,0 +1,7 @@
+@import "../../res/colors.css";
+@import "../../res/fonts.css";
+
+.register {
+  height: 100%;
+  background-color: var(--blue);
+}
