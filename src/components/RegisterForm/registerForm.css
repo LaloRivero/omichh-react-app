@@ -36,6 +36,8 @@
   border-radius: 18px;
   border: 1px var(--white) solid;
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.45);
+  color: var(--blue);
+  font-weight: bold;
 }
 .form__select{
   height: 35px;
