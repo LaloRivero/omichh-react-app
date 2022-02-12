@@ -36,6 +36,7 @@ class Http {
   add_participant = async (participant) => {
     try {
       const request = await fetch(`${URL.omichh_api}/participants/`, {
+        headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify(participant),
       });
