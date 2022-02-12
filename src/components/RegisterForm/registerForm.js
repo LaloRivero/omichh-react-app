@@ -1,6 +1,7 @@
 import React from "react";
 import Http from "../../libs/http";
 import logo from "../../assets/logo_white.svg";
+import towns from "../../libs/towns";
 import "./registerForm.css";
 
 class RegisterForm extends React.Component {
@@ -8,7 +9,10 @@ class RegisterForm extends React.Component {
     loading: false,
     error: null,
     schools: [],
-    form: {},
+    school_id: null,
+    form: {
+      type_of_participant: "student",
+    },
   };
 
   componentDidMount() {
@@ -19,7 +23,9 @@ class RegisterForm extends React.Component {
     try {
       const schools = await Http.instance.get_schools();
       this.setState({ schools: schools.results });
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   handleChange = (event) => {
@@ -31,12 +37,36 @@ class RegisterForm extends React.Component {
     });
   };
 
+  validateData = (data) => {
+    let school_id = this.state.schools.filter(
+      (school) => school.name === data.school
+    );
+    if (this.state.school_id == null) {
+      this.setState({ school_id: school_id[0].id });
+    }
+    data.school = this.state.school_id;
+    console.log(school_id);
+    console.log(data.school);
+    if (!data.phone.startsWith("+52")) {
+      data.phone = `+52${data.phone}`;
+    }
+    if (!data.tutor_phone.startsWith("+52")) {
+      data.tutor_phone = `+52${data.tutor_phone}`;
+    }
+    this.setState({ form: data });
+  };
+
   handelSubmit = async (event) => {
     event.preventDefault();
+    this.validateData(this.state.form);
     console.log(this.state.form);
-    /*const form_elements = event.target.map((element)=>{
-      return element
-    }) */
+    try {
+      await Http.instance.add_participant(this.state.form);
+      this.setState({ loading: true, error: null });
+    } catch (err) {
+      console.log(err);
+      this.setState({ loading: false, error: err });
+    }
   };
 
   render() {
@@ -58,6 +88,7 @@ class RegisterForm extends React.Component {
               type="text"
               name="first_name"
               onChange={this.handleChange}
+              required
             ></input>
             <br />
             <label>Apellido(s)</label>
@@ -67,33 +98,40 @@ class RegisterForm extends React.Component {
               type="text"
               name="last_name"
               onChange={this.handleChange}
+              required
             ></input>
             <br />
             <label>Fecha de nacimiento</label>
             <br />
             <input
               className="form__input"
-              type="text"
-              name="last_name"
+              type="date"
+              name="birthday"
               onChange={this.handleChange}
+              required
             ></input>
             <br />
             <label>Teléfono de contacto</label>
             <br />
             <input
               className="form__input"
-              type="text"
-              name="last_name"
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              placeholder="ej. 6141234567"
               onChange={this.handleChange}
+              required
             ></input>
             <br />
             <label>Correo electrónico</label>
             <br />
             <input
               className="form__input"
-              type="text"
+              type="email"
               name="email"
               onChange={this.handleChange}
+              required
             ></input>
             <br />
             <label>Categoría</label>
@@ -102,6 +140,7 @@ class RegisterForm extends React.Component {
               className="form__select"
               name="category"
               onChange={this.handleChange}
+              required
             >
               <option value="">Selecione una opción</option>
               <option value="OMI">OMI</option>
@@ -115,14 +154,19 @@ class RegisterForm extends React.Component {
               className="form__select form__school"
               name="school"
               onChange={this.handleChange}
+              required
             >
               <option value="">Seleccione una opción</option>
               {this.state.schools.map((school) => {
-                return (
-                  <option key={school.id} value={school.name}>
-                    {school.name}
-                  </option>
-                );
+                if (school.category === this.state.form.category) {
+                  return (
+                    <option key={school.id} value={school.name}>
+                      {school.name}
+                    </option>
+                  );
+                } else {
+                  return null;
+                }
               })}
             </select>
             <br />
@@ -133,8 +177,13 @@ class RegisterForm extends React.Component {
             <br />
             <label className="form__afterSchool">Año escolar</label>
             <br />
-            <select className="form__select" name="grade"
-              onChange={this.handleChange}>
+            <select
+              className="form__select"
+              name="grade"
+              required
+              onChange={this.handleChange}
+            >
+              <option value="">Seleccione una opción</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -145,19 +194,53 @@ class RegisterForm extends React.Component {
             <br />
             <label>Ciudad</label>
             <br />
-            <input className="form__input" type="text" name="town" onChange={this.handleChange}></input>
+            <select
+              className="form__select"
+              name="town"
+              onChange={this.handleChange}
+              required
+            >
+              <option value="">Seleccione una opción</option>
+              {towns.map((town) => {
+                return (
+                  <option key={town} value={town}>
+                    {town}
+                  </option>
+                );
+              })}
+            </select>
             <br />
             <label>Nombre del Padre o Tutor</label>
             <br />
-            <input className="form__input" type="text" name="tutor_name" onChange={this.handleChange}></input>
+            <input
+              className="form__input"
+              type="text"
+              name="tutor_name"
+              required
+              onChange={this.handleChange}
+            ></input>
             <br />
             <label>Teléfono del Padre o Tutor</label>
             <br />
-            <input className="form__input" type="text" name="tutor_phone" onChange={this.handleChange}></input>
+            <input
+              className="form__input"
+              type="text"
+              name="tutor_phone"
+              pattern="[0-9]{10}"
+              placeholder="ej. 6141234567"
+              required
+              onChange={this.handleChange}
+            ></input>
             <br />
             <label>Correo electrónico del Padre o Tutor</label>
             <br />
-            <input className="form__input" type="text" name="tutor_email" onChange={this.handleChange}></input>
+            <input
+              className="form__input"
+              type="email"
+              name="tutor_email"
+              required
+              onChange={this.handleChange}
+            ></input>
             <br />
             <div className="form__submit__container">
               <button className="form__submit" type="submit">
