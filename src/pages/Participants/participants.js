@@ -1,60 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import ParticipantTable from "../../components/ParticipantTable/participantTable";
 import team from "../../assets/Team-amico.svg";
-import Http from "../../libs/http";
+import URL from "../../libs/url";
 import "./participants.css";
-class Participants extends React.Component {
-  state = {
-    theme: "light",
-    omi: null,
-    omis: null,
-    omip: null,
-  };
-  componentDidMount() {
-    this.getParticipants();
-  }
 
-  getParticipants = async () => {
-    let response = await Http.instance.get_participants();
-    const data = response.results;
-    console.log(data);
-    this.setState({
-      omi: data.filter((participant) => participant.category === "OMI"),
-      omis: data.filter((participant) => participant.category === "OMIS"),
-      omip: data.filter((participant) => participant.category === "OMIP"),
-    });
-  };
+const url = `${URL.omichh_api}/participants/`
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="participants">
-          <Navbar theme={this.state.theme} />
-          <div className="participants__hero">
-            <img className="hero__img" src={team} alt="team" />
-            <div className="hero__text">
-              <h3>
-                A continuación podrás consultar la lista de los alumnos
-                inscritos en la Olimpiada Mexicana de informática en Chihuahua.
-              </h3>
-            </div>
+const Participants = () => {
+  const [participantsOMI, setParticipantsOMI] = useState([]);
+  const [participantsOMIS, setParticipantsOMIS] = useState([]);
+  const [participantsOMIP, setParticipantsOMIP] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+    .then(response => response.json())
+    .then(data =>{
+      setParticipantsOMI(
+        data.results.filter((participant) => participant.category === "OMI")
+      );
+      setParticipantsOMIS(
+        data.results.filter((participant) => participant.category === "OMIS")
+      );
+      setParticipantsOMIP(
+        data.results.filter((participant) => participant.category === "OMIP")
+      );
+    })
+  }, []);
+
+  return (
+    <React.Fragment>
+      <div className="participants">
+        <Navbar theme={"light"} />
+        <div className="participants__hero">
+          <img className="hero__img" src={team} alt="team" />
+          <div className="hero__text">
+            <h3>
+              A continuación podrás consultar la lista de los alumnos inscritos
+              en la Olimpiada Mexicana de informática en Chihuahua.
+            </h3>
           </div>
-          {this.state.omi ? (
-            <ParticipantTable data={this.state.omi} category={"OMI"} />
-          ) : null}
-          {this.state.omis ? (
-            <ParticipantTable data={this.state.omis} category={"OMIS"} />
-          ) : null}
-          {this.state.omip ? (
-            <ParticipantTable data={this.state.omip} category={"OMIP"} />
-          ) : null}
-          <Footer theme={this.state.theme} />
         </div>
-      </React.Fragment>
-    );
-  }
-}
+        <ParticipantTable data={participantsOMI} category={"OMI"} />
+        <ParticipantTable data={participantsOMIS} category={"OMIS"} />
+        <ParticipantTable data={participantsOMIP} category={"OMIP"} />
+        <Footer theme={"light"} />
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default Participants;
