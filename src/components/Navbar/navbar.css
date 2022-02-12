@@ -58,6 +58,7 @@
   flex-direction: column;
   justify-content: start;
   position: fixed;
+  z-index: 2;
   top: 0;
   right: -100%;
   transition: 850ms;
