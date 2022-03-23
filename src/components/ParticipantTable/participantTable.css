@@ -1,10 +1,13 @@
+@import "../../res/colors.css";
+@import "../../res/fonts.css";
+
 .dataTable__container{
   margin: 5% 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  color:#0091bf;
+  color: var(--blue);
 }
 .dataTable__container h3{
   margin-bottom: 20px;
@@ -13,5 +16,35 @@
   padding: 15px;
   display: flex;
   border-radius: 15px;
-  border: 1px solid #0091bf;
+  border: 1px solid var(--blue);
+}
+.dataTable__tableTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+}
+.search__input{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  width: 50%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  border: 1px var(--blue) solid;
+  color: var(--blue);
+  font-weight: bold;
+}
+.input{
+  width: 80%;
+  border: none;
+  margin-left: 5px;
+  outline: none;
+}
+
+.search__icon{
+  width: 15px;
 }
