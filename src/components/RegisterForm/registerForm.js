@@ -13,6 +13,7 @@ class RegisterForm extends React.Component {
     form: {
       type_of_participant: "student",
     },
+    showModal: false,
   };
 
   componentDidMount() {
@@ -67,6 +68,11 @@ class RegisterForm extends React.Component {
       console.log(err);
       this.setState({ loading: false, error: err });
     }
+  };
+
+  handleToggleModal = () => {
+    let toggleModal = this.state.showModal;
+    this.setState({ showModal: !toggleModal });
   };
 
   render() {
@@ -170,10 +176,12 @@ class RegisterForm extends React.Component {
               })}
             </select>
             <br />
-            <a className="form__new_school" href="/register">
-              {" "}
-              <small>Registra una nueva escuela</small>
-            </a>
+            <small
+              onClick={this.handleToggleModal}
+              className="form__new_school"
+            >
+              Registra una nueva escuela
+            </small>
             <br />
             <label className="form__afterSchool">Año escolar</label>
             <br />
@@ -249,6 +257,7 @@ class RegisterForm extends React.Component {
             </div>
           </form>
         </div>
+        {this.state.showModal ? <div>modal</div> : null}
       </React.Fragment>
     );
   }
