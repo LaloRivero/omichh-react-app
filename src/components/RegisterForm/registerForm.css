@@ -55,6 +55,7 @@
   margin-bottom: 0px;
 }
 .form__new_school{
+  cursor: pointer;
   padding: 0 15px;
   color:var(--white);
 }
