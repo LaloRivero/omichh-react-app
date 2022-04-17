@@ -2,6 +2,7 @@ import React from "react";
 import Http from "../../libs/http";
 import logo from "../../assets/logo_white.svg";
 import towns from "../../libs/towns";
+import CreateSchoolModal from "../Modal/CreateSchoolModal";
 import "./registerForm.css";
 
 class RegisterForm extends React.Component {
@@ -257,7 +258,11 @@ class RegisterForm extends React.Component {
             </div>
           </form>
         </div>
-        {this.state.showModal ? <div>modal</div> : null}
+        {this.state.showModal ?
+          <CreateSchoolModal
+            showModal={this.state.showModal}
+            handleToggleModal={this.handleToggleModal}
+          />: null }
       </React.Fragment>
     );
   }
