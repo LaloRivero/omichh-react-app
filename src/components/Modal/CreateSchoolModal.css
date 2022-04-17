@@ -1,0 +1,21 @@
+@import "../../res/colors.css";
+@import "../../res/fonts.css";
+
+.ModalForm{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+}
+.Modal__container{
+  background-color: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  z-index: 21;
+}
