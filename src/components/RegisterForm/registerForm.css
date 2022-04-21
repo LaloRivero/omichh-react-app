@@ -1,6 +1,15 @@
 @import "../../res/colors.css";
 @import "../../res/fonts.css";
 
+/* Form element styles */
+label{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+small{
+  font-weight: 400;
+}
+
 .registerForm {
   max-width: 400px;
   padding: 30px 10px;
