@@ -10,8 +10,10 @@ class Register extends React.Component {
       <React.Fragment>
         <div className="register">
           <Navbar theme="dark"/>
-          <h1>Register</h1>
-          <RegisterForm />
+          <div className="register__content">
+            <h1 className="register__title">Register</h1>
+            <RegisterForm />
+          </div>
           <Footer theme="dark"/>
         </div>
       </React.Fragment>

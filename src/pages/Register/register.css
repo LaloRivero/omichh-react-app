@@ -3,5 +3,20 @@
 
 .register {
   height: 100%;
+
   background-color: var(--blue);
+}
+.register__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 10px 40px 10px;
+}
+.register__title{
+  font-family: 'Fira Code', monospace !important;
+  font-weight: bold;
+  letter-spacing: -0.07cm;
+  margin-bottom: 20px;
+  color: var(--white);
 }
