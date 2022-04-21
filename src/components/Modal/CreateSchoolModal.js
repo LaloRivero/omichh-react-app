@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
 import "./CreateSchoolModal.css";
 
 class CreateSchoolModal extends React.Component {
@@ -21,8 +22,13 @@ class CreateSchoolModal extends React.Component {
       return (
         <div className="ModalForm">
           <div className="Modal__container">
-            <p >Registra a tu escuela</p>
-            <form>
+            <div className="Modal__close_button">
+              <AiFillCloseCircle
+                className="Modal__close_icon"
+                onClick={this.props.handleToggleModal}
+              />
+            </div>
+            <form className="form__container">
               <label>Nombre de la Escuela</label>
               <input
                 className="form__input"
@@ -43,30 +49,47 @@ class CreateSchoolModal extends React.Component {
                 <option value="OMIS">Secundaria</option>
                 <option value="OMIP">Primaria</option>
               </select>
-              <label>Dirección</label>
+              <label>
+                Dirección{" "}
+                <small>
+                  (<i>Si no la conoces dejalo en blanco)</i>
+                </small>
+              </label>
               <input
                 className="form__input"
                 type="text"
                 name="direction"
-                required
                 onChange={this.handleChange}
               />
-              <label>Nombre del director</label>
+              <label>
+                Nombre del director{" "}
+                <small>
+                  (<i>Si no lo conoces dejalo en blanco)</i>
+                </small>
+              </label>
               <input
                 className="form__input"
                 type="text"
                 name="principal_name"
-                required
                 onChange={this.handleChange}
               />
-              <label>Correo electrónico del director</label>
+              <label>
+                Correo electrónico del director{" "}
+                <small>
+                  (<i>Si no lo conoces dejalo en blanco)</i>
+                </small>
+              </label>
               <input
                 className="form__input"
                 type="text"
                 name="principal_email"
-                required
                 onChange={this.handleChange}
               />
+              <div className="form__submit__container">
+                <button className="form__submit" type="submit">
+                  Registrar
+                </button>
+              </div>
             </form>
           </div>
         </div>
