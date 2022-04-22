@@ -4,10 +4,18 @@ import Loader from "../Loader/Loader";
 import Http from "../../libs/http";
 import "./CreateSchoolModal.css";
 
+const Error = () => {
+  return (
+    <ul className="error_message">
+      <li>Ya existe una escuela registrada con ese nombre</li>
+    </ul>
+  );
+};
 class ModalUI extends React.Component {
   render() {
-    return (
-      this.props.loading  ? <Loader/> :
+    return this.props.loading ? (
+      <Loader />
+    ) : (
       <div className="ModalForm">
         <div className="Modal__container">
           <div className="Modal__close_button">
@@ -16,6 +24,7 @@ class ModalUI extends React.Component {
               onClick={this.props.handleToggleModal}
             />
           </div>
+          {this.props.error ? <Error /> : null}
           <form className="form__container" onSubmit={this.props.handelSubmit}>
             <label>Nombre de la Escuela</label>
             <input
@@ -104,13 +113,12 @@ class CreateSchoolModal extends React.Component {
   handelSubmit = async (event) => {
     event.preventDefault();
     this.setState({ loading: true, error: null });
-    try {
-      await Http.instance.add_school(this.state.form);
-      this.setState({ loading: false, error: null });
+    let response = await Http.instance.add_school(this.state.form);
+    if (response.error) {
+      this.setState({ loading: false, error: response });
+    } else {
       this.props.handleToggleModal();
-    } catch (err) {
-      console.log(err);
-      this.setState({ loading: false, error: err });
+      this.setState({ loading: false, error: null });
     }
   };
   render() {
@@ -120,6 +128,7 @@ class CreateSchoolModal extends React.Component {
         handelSubmit={this.handelSubmit}
         handleChange={this.handleChange}
         handleToggleModal={this.props.handleToggleModal}
+        error={this.state.error}
       />
     ) : null;
   }

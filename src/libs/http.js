@@ -42,9 +42,8 @@ class Http {
       });
       const status = request.status;
       const response = await request.json();
-      console.log(status);
       if (status === 400) {
-        return {error: true,...response};
+        return { error: true, ...response };
       } else if (status === 201) {
         return { error: false, response: "El alumno fue creado con exito!" };
       }
@@ -60,7 +59,11 @@ class Http {
         method: "POST",
         body: JSON.stringify(school),
       });
+      const status = request.status;
       const response = await request.json();
+      if(status===400){
+        return {error: true}
+      }
       return response;
     } catch (error) {
       return error;
