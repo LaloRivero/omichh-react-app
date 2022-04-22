@@ -50,6 +50,7 @@ class Http {
   add_school = async (school) => {
     try {
       const request = await fetch(`${URL.omichh_api}/schools/`, {
+        headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify(school),
       });
