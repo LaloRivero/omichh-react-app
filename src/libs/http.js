@@ -40,10 +40,16 @@ class Http {
         method: "POST",
         body: JSON.stringify(participant),
       });
+      const status = request.status;
       const response = await request.json();
-      return response;
-    } catch (error) {
-      throw Error(error);
+      console.log(status);
+      if (status === 400) {
+        return {error: true,...response};
+      } else if (status === 201) {
+        return { error: false, response: "El alumno fue creado con exito!" };
+      }
+    } catch (err) {
+      return err;
     }
   };
 
@@ -57,7 +63,7 @@ class Http {
       const response = await request.json();
       return response;
     } catch (error) {
-      throw Error(error);
+      return error;
     }
   };
 }
