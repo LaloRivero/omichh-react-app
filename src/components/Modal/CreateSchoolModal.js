@@ -3,10 +3,89 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import Http from "../../libs/http";
 import "./CreateSchoolModal.css";
 
+class ModalUI extends React.Component {
+  render() {
+    return (
+      <div className="ModalForm">
+        <div className="Modal__container">
+          <div className="Modal__close_button">
+            <AiFillCloseCircle
+              className="Modal__close_icon"
+              onClick={this.props.handleToggleModal}
+            />
+          </div>
+          <form className="form__container" onSubmit={this.props.handelSubmit}>
+            <label>Nombre de la Escuela</label>
+            <input
+              className="form__input"
+              type="text"
+              name="name"
+              required
+              onChange={this.props.handleChange}
+            />
+            <label>Categoría</label>
+            <select
+              className="form__select"
+              name="category"
+              onChange={this.props.handleChange}
+              required
+            >
+              <option value="">Seleccione una opción</option>
+              <option value="OMI">Media Superior</option>
+              <option value="OMIS">Secundaria</option>
+              <option value="OMIP">Primaria</option>
+            </select>
+            <label>
+              Dirección{" "}
+              <small>
+                (<i>Si no la conoces dejalo en blanco)</i>
+              </small>
+            </label>
+            <input
+              className="form__input"
+              type="text"
+              name="direction"
+              onChange={this.props.handleChange}
+            />
+            <label>
+              Nombre del director{" "}
+              <small>
+                (<i>Si no lo conoces dejalo en blanco)</i>
+              </small>
+            </label>
+            <input
+              className="form__input"
+              type="text"
+              name="principal_name"
+              onChange={this.props.handleChange}
+            />
+            <label>
+              Correo electrónico del director{" "}
+              <small>
+                (<i>Si no lo conoces dejalo en blanco)</i>
+              </small>
+            </label>
+            <input
+              className="form__input"
+              type="text"
+              name="principal_email"
+              onChange={this.props.handleChange}
+            />
+            <div className="form__submit__container">
+              <button className="form__submit" type="submit">
+                Registrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
 class CreateSchoolModal extends React.Component {
   state = {
-    loading:true,
-    error:null,
+    loading: true,
+    error: null,
     form: {},
   };
 
@@ -17,6 +96,7 @@ class CreateSchoolModal extends React.Component {
         [event.target.name]: event.target.value,
       },
     });
+    console.log(this.state.form);
   };
 
   handelSubmit = async (event) => {
@@ -32,83 +112,13 @@ class CreateSchoolModal extends React.Component {
     }
   };
   render() {
-    if (this.props.showModal) {
-      return (
-        <div className="ModalForm">
-          <div className="Modal__container">
-            <div className="Modal__close_button">
-              <AiFillCloseCircle
-                className="Modal__close_icon"
-                onClick={this.props.handleToggleModal}
-              />
-            </div>
-            <form className="form__container" onSubmit={this.handelSubmit}>
-              <label>Nombre de la Escuela</label>
-              <input
-                className="form__input"
-                type="text"
-                name="name"
-                required
-                onChange={this.handleChange}
-              />
-              <label>Categoría</label>
-              <select
-                className="form__select"
-                name="category"
-                onChange={this.handleChange}
-                required
-              >
-                <option value="">Seleccione una opción</option>
-                <option value="OMI">Media Superior</option>
-                <option value="OMIS">Secundaria</option>
-                <option value="OMIP">Primaria</option>
-              </select>
-              <label>
-                Dirección{" "}
-                <small>
-                  (<i>Si no la conoces dejalo en blanco)</i>
-                </small>
-              </label>
-              <input
-                className="form__input"
-                type="text"
-                name="direction"
-                onChange={this.handleChange}
-              />
-              <label>
-                Nombre del director{" "}
-                <small>
-                  (<i>Si no lo conoces dejalo en blanco)</i>
-                </small>
-              </label>
-              <input
-                className="form__input"
-                type="text"
-                name="principal_name"
-                onChange={this.handleChange}
-              />
-              <label>
-                Correo electrónico del director{" "}
-                <small>
-                  (<i>Si no lo conoces dejalo en blanco)</i>
-                </small>
-              </label>
-              <input
-                className="form__input"
-                type="text"
-                name="principal_email"
-                onChange={this.handleChange}
-              />
-              <div className="form__submit__container">
-                <button className="form__submit" type="submit">
-                  Registrar
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      );
-    }
+    return this.props.showModal ? (
+      <ModalUI
+        handleToggleModal={this.props.handleToggleModal}
+        handelSubmit={this.handelSubmit}
+        handleChange={this.handleChange}
+      />
+    ) : null;
   }
 }
 
