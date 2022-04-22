@@ -8,8 +8,8 @@ class Http {
       const request = await fetch(`${URL.omichh_api}/participants/`);
       const response = await request.json();
       return response;
-    } catch (error) {
-      throw Error(error);
+    } catch (err) {
+      throw Error(err);
     }
   };
 
@@ -18,8 +18,8 @@ class Http {
       const request = await fetch(`${URL.omichh_api}/schools/`);
       const response = await request.json();
       return response;
-    } catch (error) {
-      throw Error(error);
+    } catch (err) {
+      throw Error(err);
     }
   };
 
@@ -28,8 +28,8 @@ class Http {
       const request = await fetch(`${URL.omichh_api}/schools/${id}/`);
       const response = await request.json();
       return response;
-    } catch (error) {
-      throw Error(error);
+    } catch (err) {
+      throw Error(err);
     }
   };
 
@@ -48,7 +48,7 @@ class Http {
         return { error: false, response: "El alumno fue creado con exito!" };
       }
     } catch (err) {
-      return err;
+      throw Error(err);
     }
   };
 
@@ -61,12 +61,26 @@ class Http {
       });
       const status = request.status;
       const response = await request.json();
-      if(status===400){
-        return {error: true}
+      if (status === 400) {
+        return { error: true };
       }
       return response;
-    } catch (error) {
-      return error;
+    } catch (err) {
+      throw Error(err);
+    }
+  };
+
+  verify_account = async (token) => {
+    try {
+      const request = await fetch(`${URL.omichh_api}/verify/`, {
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+        body: JSON.stringify(token),
+      });
+      const response = await request.json();
+      return response
+    } catch (err) {
+      return Error(err);
     }
   };
 }
