@@ -1,9 +1,12 @@
 .error_404__container {
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--blue);
+    font-family: "Fira Code";
+    font-weight: bold;
 }
 .error_404__container img{
     width: 50%;
