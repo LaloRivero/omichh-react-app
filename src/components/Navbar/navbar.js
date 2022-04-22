@@ -14,7 +14,10 @@ const Navbar = (props) => {
 
   return (
     <React.Fragment>
-      <div className={props.theme === "light" ? "navbar navbar-light" : "navbar navbar-dark"}
+      <div
+        className={
+          props.theme === "light" ? "navbar navbar-light" : "navbar navbar-dark"
+        }
       >
         <Link to="/" className="navbar__logo">
           <img
@@ -22,11 +25,20 @@ const Navbar = (props) => {
             alt="logo"
           />
         </Link>
-        <Link to="#" className={props.theme === "light" ? "navbar__menu-bars color-light" : "navbar__menu-bars color-dark"}>
+        <Link
+          to="#"
+          className={
+            props.theme === "light"
+              ? "navbar__menu-bars color-light"
+              : "navbar__menu-bars color-dark"
+          }
+        >
           <FaBars onClick={showSidebar} />
         </Link>
       </div>
-      <nav className={sidebar ? "navbar__menu active navbar-dark" : "navbar__menu"}>
+      <nav
+        className={sidebar ? "navbar__menu active navbar-dark" : "navbar__menu"}
+      >
         <ul className="navbar__menu-items" onClick={showSidebar}>
           <li className="navbar__toggle">
             <Link className="menu__bars-close color-dark" to="#">
@@ -34,14 +46,17 @@ const Navbar = (props) => {
             </Link>
           </li>
           {SidebarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
+            if (item.status === "available") {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            }
+            return null;
           })}
         </ul>
       </nav>
