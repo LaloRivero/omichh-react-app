@@ -1,9 +1,12 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Http from "../../libs/http";
 import "./CreateSchoolModal.css";
 
 class CreateSchoolModal extends React.Component {
   state = {
+    loading:true,
+    error:null,
     form: {},
   };
 
@@ -14,9 +17,20 @@ class CreateSchoolModal extends React.Component {
         [event.target.name]: event.target.value,
       },
     });
-    console.log(this.state.form);
   };
 
+  handelSubmit = async (event) => {
+    event.preventDefault();
+    console.log(this.state.form);
+    try {
+      await Http.instance.add_school(this.state.form);
+      this.setState({ loading: true, error: null });
+      this.props.handleToggleModal();
+    } catch (err) {
+      console.log(err);
+      this.setState({ loading: false, error: err });
+    }
+  };
   render() {
     if (this.props.showModal) {
       return (
@@ -28,7 +42,7 @@ class CreateSchoolModal extends React.Component {
                 onClick={this.props.handleToggleModal}
               />
             </div>
-            <form className="form__container">
+            <form className="form__container" onSubmit={this.handelSubmit}>
               <label>Nombre de la Escuela</label>
               <input
                 className="form__input"
