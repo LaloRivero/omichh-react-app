@@ -1,11 +1,13 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../Loader/Loader";
 import Http from "../../libs/http";
 import "./CreateSchoolModal.css";
 
 class ModalUI extends React.Component {
   render() {
     return (
+      this.props.loading  ? <Loader/> :
       <div className="ModalForm">
         <div className="Modal__container">
           <div className="Modal__close_button">
@@ -84,7 +86,7 @@ class ModalUI extends React.Component {
 }
 class CreateSchoolModal extends React.Component {
   state = {
-    loading: true,
+    loading: false,
     error: null,
     form: {},
   };
@@ -101,10 +103,10 @@ class CreateSchoolModal extends React.Component {
 
   handelSubmit = async (event) => {
     event.preventDefault();
-    console.log(this.state.form);
+    this.setState({ loading: true, error: null });
     try {
       await Http.instance.add_school(this.state.form);
-      this.setState({ loading: true, error: null });
+      this.setState({ loading: false, error: null });
       this.props.handleToggleModal();
     } catch (err) {
       console.log(err);
@@ -114,9 +116,10 @@ class CreateSchoolModal extends React.Component {
   render() {
     return this.props.showModal ? (
       <ModalUI
-        handleToggleModal={this.props.handleToggleModal}
+        loading={this.state.loading}
         handelSubmit={this.handelSubmit}
         handleChange={this.handleChange}
+        handleToggleModal={this.props.handleToggleModal}
       />
     ) : null;
   }
