@@ -6,6 +6,15 @@ import CreateSchoolModal from "../Modal/CreateSchoolModal";
 import Loader from "../Loader/Loader";
 import "./registerForm.css";
 
+const Error = (data) => {
+  return (
+    <ul className="error_message">
+      { data.error.email ? <li>Ya existe un alumno con ese correo electronico</li> : null }
+      { data.error.phone ? <li>Ya existe un alumno registrado con ese número celular</li> : null }
+    </ul>
+  )
+};
+
 const RegisterFormUi = (props) => {
   return (
     <React.Fragment>
@@ -18,6 +27,8 @@ const RegisterFormUi = (props) => {
           <div className="form__logo">
             <img src={logo} alt="logo" />
           </div>
+          {props.error ? <Error error={props.error_data} /> :
+           props.error_data.response ? <div className="success_message">{props.error_data.response}</div> : null}
           <label>Nombre(s)</label>
           <br />
           <input
@@ -198,6 +209,7 @@ class RegisterForm extends React.Component {
   state = {
     loading: false,
     error: null,
+    error_data:{},
     schools: [],
     form: {
       type_of_participant: "student",
@@ -231,7 +243,7 @@ class RegisterForm extends React.Component {
     let school_id = this.state.schools.filter(
       (school) => school.name === data.school
     );
-    data.school = school_id[0].id
+    data.school = school_id[0].id;
     if (!data.phone.startsWith("+52")) {
       data.phone = `+52${data.phone}`;
     }
@@ -239,20 +251,14 @@ class RegisterForm extends React.Component {
       data.tutor_phone = `+52${data.tutor_phone}`;
     }
     this.setState({ form: data });
-    console.log(this.state.form);
   };
 
   handelSubmit = async (event) => {
     event.preventDefault();
     this.setState({ loading: true, error: null });
     this.validateData(this.state.form);
-    try {
-      await Http.instance.add_participant(this.state.form);
-      this.setState({ loading: false, error: null });
-    } catch (err) {
-      console.log(err);
-      this.setState({ loading: false, error: err });
-    }
+    let response = await Http.instance.add_participant(this.state.form);
+    this.setState({ loading: false, error: response.error, error_data: response });
   };
 
   handleToggleModal = () => {
@@ -273,6 +279,8 @@ class RegisterForm extends React.Component {
         handleChange={this.handleChange}
         validateData={this.validateData}
         state={this.state}
+        error={this.state.error}
+        error_data={this.state.error_data}
       />
     );
   }

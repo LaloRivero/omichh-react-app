@@ -90,3 +90,23 @@ small{
   color: var(--blue);
   font-weight: bold;
 }
+.success_message{
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 0;
+  text-align: center;
+  border: solid 1px var(--white);
+  color: var(--blue);
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.error_message{
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 0px 10px 50px;
+  border: solid 2px var(--dark_red);
+  color: var(--white);
+  background-color: var(--red);
+  border-radius: 10px;
+}
