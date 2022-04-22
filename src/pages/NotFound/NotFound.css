@@ -1,0 +1,10 @@
+.error_404__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.error_404__container img{
+    width: 50%;
+}
