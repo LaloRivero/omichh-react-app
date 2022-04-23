@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../SideBarData/sidebarData.js";
-import logo_white from "../../assets/logo_white.svg";
-import logo_blue from "../../assets/logo_blue.svg";
+import { logo_white, logo_blue } from "../../img/images.js";
 import "./navbar.css";
 
 const Navbar = (props) => {
