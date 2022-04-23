@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
-import binary from "../../assets/binary.png";
+import { binary } from "../../img/images";
 import "./about.css";
 
 const About = () => {

@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import Button from "../../components/Button/button";
 import ParticipantTable from "../../components/ParticipantTable/participantTable";
-import team from "../../assets/Team-amico.svg";
+import { team } from "../../img/images";
 import URL from "../../libs/url";
 import "./participants.css";
 
