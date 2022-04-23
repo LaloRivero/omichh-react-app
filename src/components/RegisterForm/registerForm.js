@@ -1,6 +1,6 @@
 import React from "react";
 import Http from "../../libs/http";
-import logo from "../../assets/logo_white.svg";
+import { logo_white } from "../../img/images";
 import towns from "../../libs/towns";
 import CreateSchoolModal from "../Modal/CreateSchoolModal";
 import Loader from "../Loader/Loader";
@@ -9,10 +9,14 @@ import "./registerForm.css";
 const Error = (data) => {
   return (
     <ul className="error_message">
-      { data.error.email ? <li>Ya existe un alumno con ese correo electronico</li> : null }
-      { data.error.phone ? <li>Ya existe un alumno registrado con ese número celular</li> : null }
+      {data.error.email ? (
+        <li>Ya existe un alumno con ese correo electronico</li>
+      ) : null}
+      {data.error.phone ? (
+        <li>Ya existe un alumno registrado con ese número celular</li>
+      ) : null}
     </ul>
-  )
+  );
 };
 
 const RegisterFormUi = (props) => {
@@ -25,10 +29,17 @@ const RegisterFormUi = (props) => {
           onSubmit={props.handelSubmit}
         >
           <div className="form__logo">
-            <img src={logo} alt="logo" />
+            <img src={logo_white} alt="logo" />
           </div>
-          {props.error ? <Error error={props.error_data} /> :
-           props.error_data.response ? <div className="success_message">{props.error_data.response}</div> : null}
+          {props.error ? (
+            <Error error={props.error_data} />
+          ) : props.error_data.response ? (
+            <div className="success_message">
+              {props.error_data.response}
+              <small>Ingresa a tu correo para verificar tu registro,</small>
+              <small>si no encuentras el correo de verificación busca en la carpeta de spam.</small>
+            </div>
+          ) : null}
           <label>Nombre(s)</label>
           <br />
           <input
@@ -209,7 +220,7 @@ class RegisterForm extends React.Component {
   state = {
     loading: false,
     error: null,
-    error_data:{},
+    error_data: {},
     schools: [],
     form: {
       type_of_participant: "student",
@@ -258,7 +269,11 @@ class RegisterForm extends React.Component {
     this.setState({ loading: true, error: null });
     this.validateData(this.state.form);
     let response = await Http.instance.add_participant(this.state.form);
-    this.setState({ loading: false, error: response.error, error_data: response });
+    this.setState({
+      loading: false,
+      error: response.error,
+      error_data: response,
+    });
   };
 
   handleToggleModal = () => {

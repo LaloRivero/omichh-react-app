@@ -91,6 +91,10 @@ small{
   font-weight: bold;
 }
 .success_message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   margin: 20px 0;
   padding: 10px 0;
@@ -100,6 +104,11 @@ small{
   background-color: var(--white);
   border-radius: 10px;
 }
+
+.success_message small{
+  margin: 0px 10px;
+}
+
 
 .error_message{
   width: 100%;
