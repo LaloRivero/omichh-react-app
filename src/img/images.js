@@ -18,3 +18,4 @@ export const team =
   "https://res.cloudinary.com/dwwj1fhcd/image/upload/v1650735712/Team-amico_tcu26w.svg";
 export const binary =
   "https://res.cloudinary.com/dwwj1fhcd/image/upload/v1650735703/binary_umujpu.png";
+export const search_icon = "https://res.cloudinary.com/dwwj1fhcd/image/upload/v1650735712/search_mwfcqn.png"
