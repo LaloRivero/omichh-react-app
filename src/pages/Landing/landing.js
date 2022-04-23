@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Button from "../../components/Button/button";
 import Footer from "../../components/Footer/footer";
-import medals from "../../assets/medallas.png";
+import { medals } from "../../img/images";
 import "./landing.css";
 
 const Landing = () =>{
