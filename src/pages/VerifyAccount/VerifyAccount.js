@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
-import ok from "../../assets/ok.png";
-import no_data from "../../assets/no_data.png";
+import { ok, no_data } from "../../img/images";
 import Http from "../../libs/http";
 
 const VerifyAccount = () => {
