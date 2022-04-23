@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
-import error404 from "../../assets/404Error.png";
+import { error404 } from "../../img/images.js";
 import "./NotFound.css";
 
 const Notfound = () => {
