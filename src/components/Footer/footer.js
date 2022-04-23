@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import w_facebook from "../../assets/wfacebook.svg";
-import b_facebook from "../../assets/bfacebook.svg";
+import { b_facebook, w_facebook } from "../../img/images";
 import "./footer.css";
 
 const Footer = (props) => {
