@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Button from "../../components/Button/button";
 import Footer from "../../components/Footer/footer";
 import { medals } from "../../img/images";
+import URL from "../../libs/url";
 import "./landing.css";
+const url = `${URL.omichh_api}/participants/`;
 
 const Landing = () =>{
+  useEffect(()=>{
+    fetch(url)
+    .then((response) => response.json())
+  })
   return (
       <React.Fragment>
         <div className="landing">

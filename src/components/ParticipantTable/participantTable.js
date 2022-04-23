@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
-import "./participantTable.css";
 import { search_icon } from "../../img/images";
+import "./participantTable.css";
 
 const ParticipantTable = (props) => {
   const [search, setSearch] = useState("");
