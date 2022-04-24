@@ -28,6 +28,11 @@ const ParticipantTable = (props) => {
       selector: (row) => row.last_name,
       sortable: true,
     },
+    {
+      name: "Correo",
+      selector: (row) => row.email,
+      sortable: true,
+    },
 /*     {
       name: "Escuela",
       selector: (row) => row.school.name,
