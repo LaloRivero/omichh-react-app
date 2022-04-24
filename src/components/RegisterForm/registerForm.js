@@ -107,9 +107,9 @@ const RegisterFormUi = (props) => {
             <option value="OMIP">OMIP</option>
           </select>
           <br />
-          <label>Escuela</label>
+          {/*<label>Escuela</label>
           <br />
-          {/*<select
+          <select
             className="form__select form__school"
             name="school"
             onChange={props.handleChange}
