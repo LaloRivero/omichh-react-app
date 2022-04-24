@@ -109,7 +109,7 @@ const RegisterFormUi = (props) => {
           <br />
           <label>Escuela</label>
           <br />
-{/*           <select
+          {/*<select
             className="form__select form__school"
             name="school"
             onChange={props.handleChange}
@@ -127,12 +127,12 @@ const RegisterFormUi = (props) => {
                 return null;
               }
             })}
-          </select> */}
+          </select> 
           <br />
           <small onClick={props.handleToggleModal} className="form__new_school">
             Registra una nueva escuela
           </small>
-          <br />
+          <br />*/}
           <label className="form__afterSchool">Año escolar</label>
           <br />
           <select
