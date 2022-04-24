@@ -107,7 +107,6 @@ class CreateSchoolModal extends React.Component {
         [event.target.name]: event.target.value,
       },
     });
-    console.log(this.state.form);
   };
 
   handelSubmit = async (event) => {
