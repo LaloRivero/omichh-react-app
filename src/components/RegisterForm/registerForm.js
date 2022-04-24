@@ -251,10 +251,10 @@ class RegisterForm extends React.Component {
   };
 
   validateData = (data) => {
-    let school_id = this.state.schools.filter(
+/*     let school_id = this.state.schools.filter(
       (school) => school.name === data.school
     );
-    data.school = school_id[0].id;
+    data.school = school_id[0].id; */
     if (!data.phone.startsWith("+52")) {
       data.phone = `+52${data.phone}`;
     }
