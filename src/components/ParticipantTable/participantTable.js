@@ -33,6 +33,11 @@ const ParticipantTable = (props) => {
       selector: (row) => row.email,
       sortable: true,
     },
+    {
+      name: "Ciudad",
+      selector: (row) => row.town,
+      sortable: true,
+    },
 /*     {
       name: "Escuela",
       selector: (row) => row.school.name,
