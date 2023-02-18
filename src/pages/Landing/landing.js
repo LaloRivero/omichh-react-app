@@ -8,10 +8,6 @@ import "./landing.css";
 const url = `${URL.omichh_api}/participants/`;
 
 const Landing = () =>{
-  useEffect(()=>{
-    fetch(url)
-    .then((response) => response.json())
-  })
   return (
       <React.Fragment>
         <div className="landing">
@@ -28,7 +24,17 @@ const Landing = () =>{
                 </strong>{" "}
                 utilizando la lógica, el ingenio y las computadoras.
               </p>
-              <Button to="/register" layout="Participa" theme="dark" />
+              <button
+                className="button"
+                data-tf-popup="hh1bZixL"
+                data-tf-opacity="100"
+                data-tf-size="100"
+                data-tf-iframe-props="title=Registro"
+                data-tf-transitive-search-params data-tf-medium="snippet"
+                layout="Participa" theme="dark"
+              >
+                Registrate
+              </button>
             </div>
             <div className="landing__medals">
               <img src={medals} alt="Medals" className="medals__img" />

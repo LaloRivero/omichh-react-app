@@ -13,14 +13,14 @@ export const SidebarData = [
     path: "/register",
     icon: <FaRegIdBadge />,
     cName: "navbar__text",
-    status: "available"
+    status: "not_available"
   },
   {
     title: "Alumnos Inscritos",
     path: "/participants",
     icon: <BsFillPersonLinesFill />,
     cName: "navbar__text",
-    status: "available"
+    status: "not_available"
   },
   {
     title: "Convocatoria",
