@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-import Button from "../../components/Button/button";
+// import Button from "../../components/Button/button";
 import Footer from "../../components/Footer/footer";
 import { medals } from "../../img/images";
-import URL from "../../libs/url";
+// import URL from "../../libs/url";
 import "./landing.css";
-const url = `${URL.omichh_api}/participants/`;
+// const url = `${URL.omichh_api}/participants/`;
 
 const Landing = () =>{
   return (

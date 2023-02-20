@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./pages/Landing/landing";
 import About from "./pages/About/about";
-import Participants from "./pages/Participants/participants";
-import Register from "./pages/Register/register";
+// import Participants from "./pages/Participants/participants";
+// import Register from "./pages/Register/register";
 import NotFound from "./pages/NotFound/NotFound";
-import VerifyAccount from "./pages/VerifyAccount/VerifyAccount";
+// import VerifyAccount from "./pages/VerifyAccount/VerifyAccount";
 import "./App.css";
+import "./components/Button/button.css"
 
 function App() {
   return (
