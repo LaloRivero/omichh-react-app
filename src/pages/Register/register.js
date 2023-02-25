@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterForm from "../../components/RegisterForm/registerForm";
+// import RegisterForm from "../../components/RegisterForm/registerForm";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import "./register.css";
@@ -15,6 +15,7 @@ class Register extends React.Component {
             <h1 className="register__title">Registro</h1>
             <iframe
               src={srcFormURL}
+              title="google-register-form"
               width="640"
               height="1720"
               frameborder="0"
