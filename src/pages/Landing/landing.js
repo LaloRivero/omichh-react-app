@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/navbar";
-// import Button from "../../components/Button/button";
+import Button from "../../components/Button/button";
 import Footer from "../../components/Footer/footer";
 import { medals } from "../../img/images";
 // import URL from "../../libs/url";
@@ -24,17 +24,7 @@ const Landing = () =>{
                 </strong>{" "}
                 utilizando la lógica, el ingenio y las computadoras.
               </p>
-              <button
-                className="button"
-                data-tf-popup="hh1bZixL"
-                data-tf-opacity="100"
-                data-tf-size="100"
-                data-tf-iframe-props="title=Registro"
-                data-tf-transitive-search-params data-tf-medium="snippet"
-                layout="Participa" theme="dark"
-              >
-                Registrate
-              </button>
+              <Button to="/registro" layout="Registrate" />
             </div>
             <div className="landing__medals">
               <img src={medals} alt="Medals" className="medals__img" />
