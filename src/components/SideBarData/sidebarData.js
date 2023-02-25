@@ -10,24 +10,24 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 export const SidebarData = [
   {
     title: "Registro",
-    path: "/register",
+    path: "/registro",
     icon: <FaRegIdBadge />,
     cName: "navbar__text",
-    status: "not_available"
+    status: "available"
   },
   {
     title: "Alumnos Inscritos",
-    path: "/participants",
+    path: "/participantes",
     icon: <BsFillPersonLinesFill />,
     cName: "navbar__text",
     status: "not_available"
   },
   {
     title: "Convocatoria",
-    path: "/",
+    path: "/convocatoria",
     icon: <HiOutlineDocumentText />,
     cName: "navbar__text",
-    status: "not_available"
+    status: "available"
   },
   {
     title: "Codigo de conducta",
