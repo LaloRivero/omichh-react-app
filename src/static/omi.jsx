@@ -47,7 +47,7 @@ Categoría Abierta
 * Examen Pre nacional se llevará a cabo de manera presencial en la ciudad de Chihuahua, Chih. Durante el mes de septiembre de 2023.
 * El sábado 2 de septiembre de 2023 a las 10:00 hrs a 14:30 hrs. Se efectuará la primera fase del examen estatal de manera virtual.
 * El sábado 9 de septiembre de 2023 a las 10:00 hrs a 14:30 hrs. Se efectuará la segunda fase del examen estatal de manera presencial, la sede del examen se informará próximo a la fecha.
-* El examen Pre-Nacional será el que determinará a los 4 alumnos que integraran a la delegación nacional que representará a Chihuahua en la OMI Nacional a celebrarse en el mes de octubre de 2023.
+* El examen Pre-Nacional será el que determinará a los 4 alumnos que integraran a la delegación nacional que representará a Chihuahua en la OMI Nacional.
 
 
 **Temario para media superior:**
